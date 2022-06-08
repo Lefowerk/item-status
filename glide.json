@@ -1,0 +1,33 @@
+[
+  {
+    "kind": "column",
+    "name": "Status",
+    "description": "The momentane Status von einem Artikel",
+    "author": "Moritz Wach",
+    "params": [
+      {
+        "name": "returned",
+        "displayName": "Zurückgegeben",
+        "type": "boolean"
+      },
+      {
+        "name": "borrowed",
+        "displayName": "Ausgeliehen",
+        "type": "boolean"
+      },
+      {
+        "name": "start",
+        "displayName": "Ausgeliehen am",
+        "type": "date"
+      },
+      {
+        "name": "end",
+        "displayName": "Zurückgegeben am",
+        "type": "date"
+      }
+    ],
+    "result": {
+      "type": "string"
+    }
+  }
+]
