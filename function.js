@@ -9,12 +9,12 @@ window.function = function (re, bo, start, end) {
   e.setHours(0,0,0,0)
   
   
-  if (s.valueOf() > today.valueOf()) {
-    return 'Reserviert'
-  } else if (!bo.value && s.valueOf() == today.valueOf()) {
+  if (!bo.value && s.valueOf() == today.valueOf()) {
     return 'Abholung heute'
   } else if (!bo.value && s.valueOf() == tomorrow.valueOf()) {
     return 'Abholung morgen'
+  } else if (s.valueOf() > today.valueOf()) {
+    return 'Reserviert'
   } else if (s.valueOf() < today.valueOf() && !bo.value) {
     return 'Nicht abgeholt'
   } else if(re.value) {
