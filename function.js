@@ -4,9 +4,9 @@ window.function = function (re, bo, start, end) {
   const s = new Date(start.value)
   s.setHours(0,0,0,0)
   const e = new Date(end.value)
-  const tomorrow = new Date(today)
-  tomorrow.setDate(tomorrow.getDate() + 1);
   e.setHours(0,0,0,0)
+  const tomorrow = new Date(today)
+  tomorrow.setDate(tomorrow.getDate() + 1)
   
   
   if (!bo.value && s.valueOf() == today.valueOf()) {
@@ -21,6 +21,8 @@ window.function = function (re, bo, start, end) {
     return 'Zurückgegeben'
   } else if (bo && e.valueOf() == today.valueOf()) {
     return 'Rückgabe heute'
+  } else if (bo && e.valueOf() == tomorrow.valueOf()) {
+    return 'Rückgabe morgen'
   } else if (bo && e.valueOf() < today.valueOf()) {
     return 'Überfällig'
   } else if (bo.value && !re.value) {
