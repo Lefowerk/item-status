@@ -4,6 +4,8 @@ window.function = function (re, bo, start, end) {
   const s = new Date(start.value)
   s.setHours(0,0,0,0)
   const e = new Date(end.value)
+  const tomorrow = new Date(today)
+  tomorrow.setDate(tomorrow.getDate() + 1);
   e.setHours(0,0,0,0)
   
   
@@ -11,6 +13,8 @@ window.function = function (re, bo, start, end) {
     return 'Reserviert'
   } else if (!bo.value && s.valueOf() == today.valueOf()) {
     return 'Abholung heute'
+  } else if (!bo.value && s.valueOf() == tomorrow.valueOf()) {
+    return 'Abholung morgen'
   } else if (s.valueOf() < today.valueOf() && !bo.value) {
     return 'Nicht abgeholt'
   } else if(re.value) {
